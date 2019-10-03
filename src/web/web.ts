@@ -5,7 +5,7 @@ import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 
-const config = require("../../webpack.config.js");
+const config = require("../../webpack.dev.js");
 
 // Express app initialization
 const app = express();
