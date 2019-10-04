@@ -1,10 +1,8 @@
-var webpack = require("webpack");
-var hotMiddlewareScript =
+const webpack = require("webpack");
+const hotMiddlewareScript =
   "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true";
 
 module.exports = {
-  mode: "development",
-
   entry: {
     main: ["./src/web/frontend/main.tsx", hotMiddlewareScript]
   },
@@ -15,9 +13,6 @@ module.exports = {
     path: __dirname + "/dist/web/frontend",
     publicPath: "/assets/"
   },
-
-  // Enable sourcemaps for debugging webpack's output.
-  devtool: "source-map",
 
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
