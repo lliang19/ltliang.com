@@ -9,7 +9,7 @@
     "build:frontend": "webpack --config webpack.prod.js",
     "build": "npm run build:backend && npm run build:frontend",
     "watch": "webpack --watch",
-    "start": "ls && node ./dist/main.js"
+    "start": "node ./dist/main.js"
   },
   "repository": {
     "type": "git",
