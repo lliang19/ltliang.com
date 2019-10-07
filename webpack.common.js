@@ -3,10 +3,6 @@ const hotMiddlewareScript =
   "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true";
 
 module.exports = {
-  entry: {
-    main: ["./src/web/frontend/main.tsx", hotMiddlewareScript]
-  },
-
   output: {
     filename: "[name].bundle.js",
     chunkFilename: "[name].chunk.js",
