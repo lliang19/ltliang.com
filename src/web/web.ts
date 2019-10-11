@@ -5,24 +5,27 @@ import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 
-const config = require("../../webpack.prod.js");
-
 // Express app initialization
 const app = express();
-const compiler = webpack(config);
 
 // Template configuration
 app.set("view engine", "ejs");
 app.set("views", "public");
 
-// Static files configuration
-app.use("/assets", express.static(path.join(__dirname, "frontend")));
-// app.use(
-//   webpackDevMiddleware(compiler, {
-//     publicPath: config.output.publicPath
-//   })
-// );
-// app.use(webpackHotMiddleware(compiler));
+if (process.env.DEV === "true") {
+  const config = require("../../webpack.dev.js");
+  const compiler = webpack(config);
+
+  app.use(
+    webpackDevMiddleware(compiler, {
+      publicPath: config.output.publicPath
+    })
+  );
+  app.use(webpackHotMiddleware(compiler));
+} else {
+  // Static files configuration
+  app.use("/assets", express.static(path.join(__dirname, "frontend")));
+}
 
 // Controllers
 app.get("/*", (req, res) => {

@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:backend": "tsc",
     "build:frontend": "webpack --config webpack.prod.js",
+    "build:frontend:dev": "webpack --config webpack.dev.js",
     "build": "npm run build:backend && npm run build:frontend",
     "watch": "webpack --watch",
     "start": "node ./dist/main.js"
