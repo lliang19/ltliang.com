@@ -14,8 +14,27 @@ import LinkedinIcon from '@material-ui/icons/Linkedin';
 // include resume in webpack bundle
 import '../assets/resume.pdf';
 
+const breakpoints = [748, 842, 935, 1029, 1122];
+const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
+
 const styles = {
   header: css({
+    [mq[0]]: {
+      fontSize: '4rem'
+    },
+    [mq[1]]: {
+      fontSize: '4.5rem'
+    },
+    [mq[2]]: {
+      fontSize: '5rem'
+    },
+    [mq[3]]: {
+      fontSize: '5.5rem'
+    },
+    [mq[4]]: {
+      fontSize: '6rem'
+    },
+    fontSize: '15vw',
     fontWeight: 400,
     textAlign: 'center'
   }),
@@ -30,9 +49,6 @@ const styles = {
     fontSize: '14pt',
     fontWeight: 300,
     textAlign: 'center'
-  }),
-  counter: css({
-    fontWeight: 500
   })
 };
 
@@ -58,7 +74,7 @@ const PlaceholderContent = () => {
           </Fab>
         </Tooltip>
         <div css={{ marginRight: 24 }} />
-        <Tooltip title="Email me!">
+        <Tooltip title="Contact me!">
           <Fab size="medium" href="#" target="_blank">
             <EmailIcon />
           </Fab>
@@ -87,22 +103,19 @@ const PlaceholderContent = () => {
         <div css={styles.body}>
           <Typography css={styles.content} variant="body1" component="p">
             As you can probably tell, there's not much to this website (yet).
-            I'm currently in the process of completely remastering my website
-            using some of the technologies that I learned and utilized in my
-            internship at <b>Lyft</b> this past Summer 2019. I can assure you,
-            this website will be incrementally updated. <br /> <br /> In the
-            meantime, check out these links for some of my work and social
-            media!
+            I'm currently in the process of remastering my website using some of
+            the technologies that I learned and utilized in my internship at{' '}
+            <b>Lyft</b> this past Summer 2019. I can assure you, this website
+            will be incrementally updated.
+          </Typography>
+          <div css={{ marginBottom: 32 }} />
+          <Typography css={styles.content} variant="body1" component="p">
+            In the meantime, check out these links for some of my work and
+            social media!
           </Typography>
         </div>
         <div css={{ marginBottom: 32 }} />
         {contentButtons()}
-        <div css={{ marginBottom: 32 }} />
-        <Typography css={styles.counter} variant="h4" component="h3">
-          {counter}
-        </Typography>
-        <div css={{ marginBottom: 16 }} />
-        <Button variant="contained">Click me!</Button>
       </>
     );
   };
