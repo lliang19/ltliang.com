@@ -1,18 +1,40 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import { css } from '@emotion/core';
+import { jssPreset, StylesProvider } from '@material-ui/core/styles';
+import { create } from 'jss';
 
-import "typeface-roboto";
-import "./style.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import PlaceholderContent from './components/PlaceholderContent';
+
+import 'typeface-roboto';
+import './base.css';
+
+const styles = {
+  App: css({
+    height: '100%',
+    padding: '0 80px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center'
+  })
+};
+
+const jss = create({
+  ...jssPreset(),
+  insertionPoint: 'jss-insertion-point'
+});
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
-
   return (
-    <div className="App">
-      <h1>{counter}</h1>
-      <button onClick={() => setCounter(counter + 1)}>Press me!</button>
-    </div>
+    <StylesProvider jss={jss}>
+      <div className="App" css={styles.App}>
+        <PlaceholderContent />
+      </div>
+    </StylesProvider>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

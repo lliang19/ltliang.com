@@ -4,6 +4,8 @@
   "jsRules": {},
   "rules": {
     "arrow-parens": false,
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "single", "jsx-double"],
     "trailing-comma": false
   },
   "rulesDirectory": []
