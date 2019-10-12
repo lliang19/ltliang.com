@@ -13,7 +13,7 @@ import './base.css';
 const styles = {
   App: css({
     height: '100%',
-    padding: '0 5vw',
+    padding: '150px 5vw',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
