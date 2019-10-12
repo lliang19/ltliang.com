@@ -157,7 +157,7 @@ const PlaceholderContent = () => {
   return (
     <>
       {contentFiller()}
-      <div css={{ marginBottom: 32 }} />
+      <div css={{ marginBottom: 48 }} />
       {contactInfo()}
     </>
   );
