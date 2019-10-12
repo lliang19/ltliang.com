@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 
 import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 
 import CodeIcon from '@material-ui/icons/Code';
 import DescriptionIcon from '@material-ui/icons/Description';
 import EmailIcon from '@material-ui/icons/Email';
 import LinkedinIcon from '@material-ui/icons/Linkedin';
+
+// include resume in webpack bundle
+import '../assets/resume.pdf';
 
 const styles = {
   header: css({
@@ -38,21 +42,37 @@ const PlaceholderContent = () => {
   const contentButtons = () => {
     return (
       <div css={styles.buttons}>
-        <Fab size="medium">
-          <CodeIcon />
-        </Fab>
+        <Tooltip title="This Website's Github Repo">
+          <Fab
+            size="medium"
+            href="https://github.com/lliang19/ltliang.com"
+            target="_blank"
+          >
+            <CodeIcon />
+          </Fab>
+        </Tooltip>
         <div css={{ marginRight: 24 }} />
-        <Fab size="medium">
-          <DescriptionIcon />
-        </Fab>
+        <Tooltip title="My resumé">
+          <Fab size="medium" href="resume" target="_blank">
+            <DescriptionIcon />
+          </Fab>
+        </Tooltip>
         <div css={{ marginRight: 24 }} />
-        <Fab size="medium">
-          <EmailIcon />
-        </Fab>
+        <Tooltip title="Email me!">
+          <Fab size="medium" href="#" target="_blank">
+            <EmailIcon />
+          </Fab>
+        </Tooltip>
         <div css={{ marginRight: 24 }} />
-        <Fab size="medium">
-          <LinkedinIcon />
-        </Fab>
+        <Tooltip title="My Linkedin">
+          <Fab
+            size="medium"
+            href="https://www.linkedin.com/in/ltliang/"
+            target="_blank"
+          >
+            <LinkedinIcon />
+          </Fab>
+        </Tooltip>
       </div>
     );
   };
@@ -82,9 +102,7 @@ const PlaceholderContent = () => {
           {counter}
         </Typography>
         <div css={{ marginBottom: 16 }} />
-        <Button css={{ boxShadow: 0 }} variant="contained">
-          Click me!
-        </Button>
+        <Button variant="contained">Click me!</Button>
       </>
     );
   };
