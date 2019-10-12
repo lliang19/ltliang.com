@@ -9,7 +9,7 @@ import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import CodeIcon from '@material-ui/icons/Code';
 import DescriptionIcon from '@material-ui/icons/Description';
 import EmailIcon from '@material-ui/icons/Email';
-import LinkedinIcon from '@material-ui/icons/Linkedin';
+import LinkedinIcon from '@material-ui/icons/LinkedIn';
 import PhoneIcon from '@material-ui/icons/Phone';
 
 import LogoIcon from '../assets/logo.svg';
