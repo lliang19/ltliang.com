@@ -1,4 +1,5 @@
 import { css } from '@emotion/core';
+import React, { useState } from 'react';
 
 import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
@@ -8,8 +9,6 @@ import CodeIcon from '@material-ui/icons/Code';
 import DescriptionIcon from '@material-ui/icons/Description';
 import EmailIcon from '@material-ui/icons/Email';
 import LinkedinIcon from '@material-ui/icons/Linkedin';
-
-import React, { useState } from 'react';
 
 const styles = {
   header: css({
