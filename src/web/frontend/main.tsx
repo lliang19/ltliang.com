@@ -12,8 +12,11 @@ import './base.css';
 
 const styles = {
   App: css({
+    '@media (min-width: 480px)': {
+      padding: '0 5vw'
+    },
     height: '100%',
-    padding: '150px 5vw',
+    padding: '125px 5vw',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
