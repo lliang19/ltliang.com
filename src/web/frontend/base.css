@@ -1,0 +1,11 @@
+html,
+body {
+  background: #d8c0c2;
+  font-family: 'Roboto';
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
