@@ -29,14 +29,25 @@ module.exports = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
       },
       {
-        test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
+        test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,
         loader: 'file-loader'
       },
       {
-        test: /\.(png|svg|jpg|gif|pdf)$/,
+        test: /\.pdf$/,
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
             options: {
               name: '[name].[ext]'
             }

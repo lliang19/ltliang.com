@@ -1,15 +1,18 @@
 import { css } from '@emotion/core';
-import React, { useState } from 'react';
+import React from 'react';
 
-import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import CodeIcon from '@material-ui/icons/Code';
 import DescriptionIcon from '@material-ui/icons/Description';
 import EmailIcon from '@material-ui/icons/Email';
 import LinkedinIcon from '@material-ui/icons/Linkedin';
+import PhoneIcon from '@material-ui/icons/Phone';
+
+import LogoIcon from '../assets/logo.svg';
 
 // include resume in webpack bundle
 import '../assets/resume.pdf';
@@ -18,6 +21,14 @@ const breakpoints = [748, 842, 935, 1029, 1122];
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
 const styles = {
+  logo: css({
+    width: 100,
+    height: 100,
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    transition: '0.25s'
+  }),
   header: css({
     [mq[0]]: {
       fontSize: '4rem'
@@ -49,12 +60,16 @@ const styles = {
     fontSize: '14pt',
     fontWeight: 300,
     textAlign: 'center'
+  }),
+  contact: css({
+    backgroundColor: '#e0e0e0',
+    fontSize: '12pt',
+    fontWeight: 400,
+    textAlign: 'center'
   })
 };
 
 const PlaceholderContent = () => {
-  const [counter, setCounter] = useState(0);
-
   const contentButtons = () => {
     return (
       <div css={styles.buttons}>
@@ -74,8 +89,8 @@ const PlaceholderContent = () => {
           </Fab>
         </Tooltip>
         <div css={{ marginRight: 24 }} />
-        <Tooltip title="Contact me!">
-          <Fab size="medium" href="#" target="_blank">
+        <Tooltip title="Email me! (coming soon)">
+          <Fab size="medium">
             <EmailIcon />
           </Fab>
         </Tooltip>
@@ -96,12 +111,13 @@ const PlaceholderContent = () => {
   const contentFiller = () => {
     return (
       <>
-        <Typography css={styles.header} variant="h1" component="h2">
+        <LogoIcon css={styles.logo} />
+        <Typography css={styles.header} variant="h1">
           Welcome to my website!
         </Typography>
         <div css={{ marginBottom: 32 }} />
         <div css={styles.body}>
-          <Typography css={styles.content} variant="body1" component="p">
+          <Typography css={styles.content} variant="body1">
             As you can probably tell, there's not much to this website (yet).
             I'm currently in the process of remastering my website using some of
             the technologies that I learned and utilized in my internship at{' '}
@@ -109,7 +125,7 @@ const PlaceholderContent = () => {
             will be incrementally updated.
           </Typography>
           <div css={{ marginBottom: 32 }} />
-          <Typography css={styles.content} variant="body1" component="p">
+          <Typography css={styles.content} variant="body1">
             In the meantime, check out these links for some of my work and
             social media!
           </Typography>
@@ -120,7 +136,31 @@ const PlaceholderContent = () => {
     );
   };
 
-  return <>{contentFiller()}</>;
+  const contactInfo = () => {
+    return (
+      <>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          <PhoneIcon />
+          <div css={{ marginRight: 8 }} />
+          (408) 930 - 5580
+        </div>
+        <div css={{ marginBottom: 8 }} />
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          <AlternateEmailIcon />
+          <div css={{ marginRight: 8 }} />
+          ltliang1@gmail.com
+        </div>
+      </>
+    );
+  };
+
+  return (
+    <>
+      {contentFiller()}
+      <div css={{ marginBottom: 32 }} />
+      {contactInfo()}
+    </>
+  );
 };
 
 export default PlaceholderContent;
