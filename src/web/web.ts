@@ -28,11 +28,11 @@ if (process.env.DEV === 'true') {
 }
 
 // Controllers
-app.get('/', (req, res) => {
-  res.render('index');
-});
 app.get('/resume', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'resume.pdf'));
+});
+app.get('/*', (req, res) => {
+  res.render('index');
 });
 
 // Start function
