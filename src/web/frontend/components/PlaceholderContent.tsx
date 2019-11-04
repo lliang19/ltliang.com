@@ -118,6 +118,14 @@ const PlaceholderContent = () => {
         <div css={{ marginBottom: 32 }} />
         <div css={styles.body}>
           <Typography css={styles.content} variant="body1">
+            My name is Lee, and I'm a fourth year student at UCSD studying
+            Computer Science with a minor in Interaction Design. I have a
+            passion for <b>Front End Engineering</b> and{' '}
+            <b>UI/UX Design and Engineering</b>, but I'm open to all different
+            areas of Software Engineering.
+          </Typography>
+          <div css={{ marginBottom: 16 }} />
+          <Typography css={styles.content} variant="body1">
             As you can probably tell, there's not much to this website (yet).
             I'm currently in the process of remastering my website using some of
             the technologies that I learned and utilized in my internship at{' '}
