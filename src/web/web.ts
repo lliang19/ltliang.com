@@ -36,7 +36,7 @@ app.get('/*', (req, res) => {
 });
 
 // Start function
-export const start = (port: number): Promise<void> => {
+export const dev_start = (port: number): Promise<void> => {
   const server = http.createServer(app);
 
   return new Promise<void>((resolve, reject) => {
