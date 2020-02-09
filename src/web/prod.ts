@@ -1,9 +1,6 @@
 import express from 'express';
 import http from 'http';
 import path from 'path';
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
 
 // Express app initialization
 const app = express();
@@ -12,17 +9,11 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'public');
 
-const config = require('../../webpack.dev.js'); // eslint-disable-line
-const compiler = webpack(config);
-
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-  })
-);
-app.use(webpackHotMiddleware(compiler));
+// Static files configuration
+app.use('/assets', express.static(path.join(__dirname, 'frontend')));
 
 // Controllers
+
 app.get('/', (req, res) => {
   res.render('index');
 });

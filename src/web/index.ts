@@ -1,1 +1,3 @@
-export * from "./web";
+import start from './web';
+
+export default start;
