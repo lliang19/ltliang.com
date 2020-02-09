@@ -12,34 +12,35 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'public');
 
-if (process.env.DEV === 'true') {
-  const config = require('../../webpack.dev.js'); // tslint:disable-line
-  const compiler = webpack(config);
+const config = require('../../webpack.dev.js'); // eslint-disable-line
+const compiler = webpack(config);
 
-  app.use(
-    webpackDevMiddleware(compiler, {
-      publicPath: config.output.publicPath
-    })
-  );
-  app.use(webpackHotMiddleware(compiler));
-} else {
-  // Static files configuration
-  app.use('/assets', express.static(path.join(__dirname, 'frontend')));
-}
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath
+  })
+);
+app.use(webpackHotMiddleware(compiler));
 
 // Controllers
+app.get('/', (req, res) => {
+  res.render('index');
+});
 app.get('/resume', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'resume.pdf'));
 });
-app.get('/*', (req, res) => {
-  res.render('index');
+app.get('/favicon.png', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'favicon.png'));
 });
 
 // Start function
-export const dev_start = (port: number): Promise<void> => {
+const start = (port: number): Promise<void> => {
   const server = http.createServer(app);
 
+  // eslint-disable-next-line
   return new Promise<void>((resolve, reject) => {
     server.listen(port, resolve);
   });
 };
+
+export default start;

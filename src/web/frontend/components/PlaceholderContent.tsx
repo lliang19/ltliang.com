@@ -18,7 +18,7 @@ import LogoIcon from '../assets/logo.svg';
 import '../assets/resume.pdf';
 
 const breakpoints = [748, 842, 935, 1029, 1122];
-const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
+const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 
 const styles = {
   logo: css({
@@ -69,98 +69,94 @@ const styles = {
   })
 };
 
-const PlaceholderContent = () => {
-  const contentButtons = () => {
-    return (
-      <div css={styles.buttons}>
-        <Tooltip title="This Website's Github Repo">
-          <Fab
-            size="medium"
-            href="https://github.com/lliang19/ltliang.com"
-            target="_blank"
-          >
-            <CodeIcon />
-          </Fab>
-        </Tooltip>
-        <div css={{ marginRight: 24 }} />
-        <Tooltip title="My resumé">
-          <Fab size="medium" href="resume" target="_blank">
-            <DescriptionIcon />
-          </Fab>
-        </Tooltip>
-        <div css={{ marginRight: 24 }} />
-        <Tooltip title="Email me! (coming soon)">
-          <Fab size="medium">
-            <EmailIcon />
-          </Fab>
-        </Tooltip>
-        <div css={{ marginRight: 24 }} />
-        <Tooltip title="My Linkedin">
-          <Fab
-            size="medium"
-            href="https://www.linkedin.com/in/ltliang/"
-            target="_blank"
-          >
-            <LinkedinIcon />
-          </Fab>
-        </Tooltip>
-      </div>
-    );
-  };
+const PlaceholderContent = (): JSX.Element => {
+  const contentButtons = (): JSX.Element => (
+    <div css={styles.buttons}>
+      <Tooltip title="This Website's Github Repo">
+        <Fab
+          size="medium"
+          href="https://github.com/lliang19/ltliang.com"
+          target="_blank"
+        >
+          <CodeIcon />
+        </Fab>
+      </Tooltip>
+      <div css={{ marginRight: 24 }} />
+      <Tooltip title="My resumé">
+        <Fab size="medium" href="resume" target="_blank">
+          <DescriptionIcon />
+        </Fab>
+      </Tooltip>
+      <div css={{ marginRight: 24 }} />
+      <Tooltip title="Email me! (coming soon)">
+        <Fab size="medium">
+          <EmailIcon />
+        </Fab>
+      </Tooltip>
+      <div css={{ marginRight: 24 }} />
+      <Tooltip title="My Linkedin">
+        <Fab
+          size="medium"
+          href="https://www.linkedin.com/in/ltliang/"
+          target="_blank"
+        >
+          <LinkedinIcon />
+        </Fab>
+      </Tooltip>
+    </div>
+  );
 
-  const contentFiller = () => {
-    return (
-      <>
-        <LogoIcon css={styles.logo} />
-        <Typography css={styles.header} variant="h1">
-          Welcome to my website!
+  const contentFiller = (): JSX.Element => (
+    <>
+      <LogoIcon css={styles.logo} />
+      <Typography css={styles.header} variant="h1">
+        Welcome to my website!
+      </Typography>
+      <div css={{ marginBottom: 32 }} />
+      <div css={styles.body}>
+        <Typography css={styles.content} variant="body1">
+          My name is Lee, and I&apos;m a fourth year student at UCSD studying Computer Science with a minor in Interaction Design. I have a passion for
+          {' '}
+          <b>Front End Engineering</b>
+          {' '}
+          and
+          {' '}
+          <b>UI/UX Design and Engineering</b>
+          , but I&apos;m open to all different areas of Software Engineering.
+        </Typography>
+        <div css={{ marginBottom: 16 }} />
+        <Typography css={styles.content} variant="body1">
+          As you can probably tell, there&apos;s not much to this website (yet). I&apos;m currently in the process of remastering my website using some of the technologies that I learned and utilized in my internship at
+          <b>Lyft</b>
+          {' '}
+          this past Summer 2019. I can assure you, this website will be incrementally updated.
         </Typography>
         <div css={{ marginBottom: 32 }} />
-        <div css={styles.body}>
-          <Typography css={styles.content} variant="body1">
-            My name is Lee, and I'm a fourth year student at UCSD studying
-            Computer Science with a minor in Interaction Design. I have a
-            passion for <b>Front End Engineering</b> and{' '}
-            <b>UI/UX Design and Engineering</b>, but I'm open to all different
-            areas of Software Engineering.
-          </Typography>
-          <div css={{ marginBottom: 16 }} />
-          <Typography css={styles.content} variant="body1">
-            As you can probably tell, there's not much to this website (yet).
-            I'm currently in the process of remastering my website using some of
-            the technologies that I learned and utilized in my internship at{' '}
-            <b>Lyft</b> this past Summer 2019. I can assure you, this website
-            will be incrementally updated.
-          </Typography>
-          <div css={{ marginBottom: 32 }} />
-          <Typography css={styles.content} variant="body1">
-            In the meantime, check out these links for some of my work and
-            social media!
-          </Typography>
-        </div>
-        <div css={{ marginBottom: 32 }} />
-        {contentButtons()}
-      </>
-    );
-  };
+        <Typography css={styles.content} variant="body1">
+          In the meantime, check out these links for some of my work and
+          social media!
+        </Typography>
+      </div>
+      <div css={{ marginBottom: 32 }} />
+      {contentButtons()}
+    </>
+  );
 
-  const contactInfo = () => {
-    return (
-      <>
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <PhoneIcon />
-          <div css={{ marginRight: 8 }} />
-          (408) 930 - 5580
-        </div>
-        <div css={{ marginBottom: 8 }} />
-        <div css={{ display: 'flex', alignItems: 'center' }}>
-          <AlternateEmailIcon />
-          <div css={{ marginRight: 8 }} />
-          ltliang1@gmail.com
-        </div>
-      </>
-    );
-  };
+  const contactInfo = (): JSX.Element => (
+    <>
+      <div css={{ display: 'flex', alignItems: 'center' }}>
+        <PhoneIcon />
+        <div css={{ marginRight: 8 }} />
+        (408) 930 - 5580
+      </div>
+      <div css={{ marginBottom: 8 }} />
+      <div css={{ display: 'flex', alignItems: 'center' }}>
+        <AlternateEmailIcon />
+        <div css={{ marginRight: 8 }} />
+        ltliang1@gmail.com
+      </div>
+    </>
+  );
 
   return (
     <>

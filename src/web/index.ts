@@ -1,2 +1,3 @@
-// export * from './web';
-export * from './prod';
+import start from './prod';
+
+export default start;

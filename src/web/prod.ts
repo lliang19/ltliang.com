@@ -13,18 +13,25 @@ app.set('views', 'public');
 app.use('/assets', express.static(path.join(__dirname, 'frontend')));
 
 // Controllers
+
+app.get('/', (req, res) => {
+  res.render('index');
+});
 app.get('/resume', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'resume.pdf'));
 });
-app.get('/*', (req, res) => {
-  res.render('index');
+app.get('/favicon.png', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'favicon.png'));
 });
 
 // Start function
-export const start = (port: number): Promise<void> => {
+const start = (port: number): Promise<void> => {
   const server = http.createServer(app);
 
+  // eslint-disable-next-line
   return new Promise<void>((resolve, reject) => {
     server.listen(port, resolve);
   });
 };
+
+export default start;

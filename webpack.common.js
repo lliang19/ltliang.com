@@ -4,7 +4,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
-    path: __dirname + '/dist/web/frontend',
+    path: `${__dirname}/dist/web/frontend`,
     publicPath: '/assets/'
   },
 
@@ -28,19 +28,11 @@ module.exports = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
       },
       {
-        test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,
-        loader: 'file-loader'
-      },
-      {
-        test: /\.pdf$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]'
-            }
-          }
-        ]
+        test: /\.(eot|woff|woff2|ttf|pdf|png)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
       },
       {
         test: /\.svg$/,
@@ -58,7 +50,9 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: './public/favicon.png'
+      favicon: './public/favicon.png',
+      filename: 'index.html',
+      template: './public/index.ejs'
     })
   ],
 

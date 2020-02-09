@@ -1,14 +1,12 @@
-import { SERVER_PORT } from './config';
+import SERVER_PORT from './config';
 
-import * as web from './web';
+import start from './web';
 
-async function main() {
-  // if (process.env.DEV === 'true') {
-  //   await web.dev_start(SERVER_PORT);
-  //   console.log(`Server started at http://localhost:${SERVER_PORT}`);
-  // } else {
-  await web.start(SERVER_PORT);
-  // }
+async function main(): Promise<void> {
+  await start(SERVER_PORT);
+
+  // eslint-disable-next-line
+  console.log(`Server started at http://localhost:${SERVER_PORT}`);
 }
 
-main().catch(error => console.error(error));
+main().catch((error) => console.error(error)); // eslint-disable-line
