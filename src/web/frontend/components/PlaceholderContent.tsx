@@ -127,6 +127,7 @@ const PlaceholderContent = (): JSX.Element => {
         <div css={{ marginBottom: 16 }} />
         <Typography css={styles.content} variant="body1">
           As you can probably tell, there&apos;s not much to this website (yet). I&apos;m currently in the process of remastering my website using some of the technologies that I learned and utilized in my internship at
+          {' '}
           <b>Lyft</b>
           {' '}
           this past Summer 2019. I can assure you, this website will be incrementally updated.
