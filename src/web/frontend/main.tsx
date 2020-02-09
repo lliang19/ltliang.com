@@ -30,14 +30,12 @@ const jss = create({
   insertionPoint: 'jss-insertion-point'
 });
 
-const App = () => {
-  return (
-    <StylesProvider jss={jss}>
-      <div className="App" css={styles.App}>
-        <PlaceholderContent />
-      </div>
-    </StylesProvider>
-  );
-};
+const App = (): JSX.Element => (
+  <StylesProvider jss={jss}>
+    <div className="App" css={styles.App}>
+      <PlaceholderContent />
+    </div>
+  </StylesProvider>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
