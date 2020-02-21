@@ -1,9 +1,11 @@
 import express from 'express';
 import http from 'http';
 import path from 'path';
+import wakeUpDyno from './wakeUpDyno';
 
 // Express app initialization
 const app = express();
+const DYNO_URL = 'http://www.ltliang.com';
 
 // Template configuration
 app.set('view engine', 'ejs');
@@ -30,7 +32,10 @@ const start = (port: number): Promise<void> => {
 
   // eslint-disable-next-line
   return new Promise<void>((resolve, reject) => {
-    server.listen(port, resolve);
+    server.listen(port, () => {
+      wakeUpDyno(DYNO_URL, 25, () => null);
+      resolve();
+    });
   });
 };
 
