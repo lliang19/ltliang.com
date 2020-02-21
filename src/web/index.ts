@@ -1,3 +1,3 @@
-import start from './web';
+import start from './prod';
 
 export default start;

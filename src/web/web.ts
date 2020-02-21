@@ -1,9 +1,12 @@
 import express from 'express';
 import http from 'http';
 import path from 'path';
+
+/* eslint-disable */
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+/* eslint-enable */
 
 // Express app initialization
 const app = express();
