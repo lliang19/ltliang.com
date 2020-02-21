@@ -115,6 +115,7 @@ const PlaceholderContent = (): JSX.Element => {
       <div css={{ marginBottom: 32 }} />
       <div css={styles.body}>
         <Typography css={styles.content} variant="body1">
+          {/* eslint-disable-next-line */}
           My name is Lee, and I&apos;m a fourth year student at UCSD studying Computer Science with a minor in Interaction Design. I have a passion for
           {' '}
           <b>Front End Engineering</b>
@@ -126,6 +127,7 @@ const PlaceholderContent = (): JSX.Element => {
         </Typography>
         <div css={{ marginBottom: 16 }} />
         <Typography css={styles.content} variant="body1">
+          {/* eslint-disable-next-line */}
           As you can probably tell, there&apos;s not much to this website (yet). I&apos;m currently in the process of remastering my website using some of the technologies that I learned and utilized in my internship at
           {' '}
           <b>Lyft</b>

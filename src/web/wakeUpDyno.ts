@@ -3,6 +3,7 @@ import fetch from 'node-fetch';
 const wakeUpDyno = (url: string, interval = 25, callback: () => void): void => {
   const milliseconds = interval * 60000;
   setTimeout(() => {
+    /* eslint-disable */
     try {
       console.log('setTimeout called.');
       // HTTP GET request to the dyno's url
@@ -19,6 +20,7 @@ const wakeUpDyno = (url: string, interval = 25, callback: () => void): void => {
         // do it all again
         return wakeUpDyno(url, interval, callback);
       }
+    /* eslint-enable */
     }
   }, milliseconds);
 };
