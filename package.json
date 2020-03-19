@@ -13,8 +13,8 @@
     "build:frontend:dev": "webpack --config webpack.dev.js",
     "build": "npm run build:backend && npm run build:frontend",
     "watch": "webpack --watch",
-    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
-    "lint-fix": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx || true",
+    "lint-fix": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix || true",
     "start": "node ./dist/main.js"
   },
   "repository": {
