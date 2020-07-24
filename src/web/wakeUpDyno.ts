@@ -15,7 +15,7 @@ const wakeUpDyno = (url: string, interval = 25, callback: () => void): void => {
       try {
         callback(); // execute callback, if passed
       } catch (e) { // catch callback error
-        callback ? console.log('Callback failed: ', e.message) : null;
+        callback != null ? console.log('Callback failed: ', e.message) : null;
       } finally {
         // do it all again
         return wakeUpDyno(url, interval, callback);

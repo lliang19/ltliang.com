@@ -59,7 +59,12 @@ const styles = {
   content: css({
     fontSize: '14pt',
     fontWeight: 300,
+    lineHeight: 1.6,
     textAlign: 'center'
+  }),
+  link: css({
+    textDecoration: 'none',
+    color: '#333333'
   }),
   contact: css({
     backgroundColor: '#e0e0e0',
@@ -115,24 +120,58 @@ const PlaceholderContent = (): JSX.Element => {
       <div css={{ marginBottom: 32 }} />
       <div css={styles.body}>
         <Typography css={styles.content} variant="body1">
-          {/* eslint-disable-next-line */}
-          My name is Lee, and I&apos;m a fourth year student at UCSD studying Computer Science with a minor in Interaction Design. I have a passion for
+          My name is Lee, and I&apos;m a recent
           {' '}
-          <b>Front End Engineering</b>
+          <b>UC San Diego</b>
           {' '}
-          and
+          graduate with a degree in
           {' '}
-          <b>UI/UX Design and Engineering</b>
-          , but I&apos;m open to all different areas of Software Engineering.
+          <b>Computer Science</b>
+          {' '}
+          and a minor in
+          {' '}
+          <b>Interaction Design</b>
+          .
+          {' '}
+          I&apos;ve been exposed to various different aspects of Software Engineering, including
+          {' '}
+          <b>Front End Engineering and UI/UX Design and Engineering </b>
+          {' '}
+          at
+          {' '}
+          <b>
+            <a
+              href="https://www.lyft.com/" target="_blank" rel="noopener noreferrer"
+              css={styles.link}
+            >
+              <u>Lyft</u>
+            </a>
+          </b>
+          {' '}
+          in the Summer of 2019, and now
+          {' '}
+          <b>Back End Engineering</b>
+          {' '}
+          at my current position as
+          {' '}
+          <b>Associate Software Engineer</b>
+          {' '}
+          at a local San Diego defense/government contracting company
+          {' '}
+          <b>
+            <a
+              href="https://www.ctic.us/" target="_blank" rel="noopener noreferrer"
+              css={styles.link}
+            >
+              <u>Chesapeake Technology International (CTI)</u>
+            </a>
+          </b>
+          .
         </Typography>
         <div css={{ marginBottom: 16 }} />
         <Typography css={styles.content} variant="body1">
           {/* eslint-disable-next-line */}
-          As you can probably tell, there&apos;s not much to this website (yet). I&apos;m currently in the process of remastering my website using some of the technologies that I learned and utilized in my internship at
-          {' '}
-          <b>Lyft</b>
-          {' '}
-          this past Summer 2019. I can assure you, this website will be incrementally updated.
+          As you can probably tell, there&apos;s not much to this website (yet). I&apos;m currently in the process of remastering my website using some of the technologies that I learned and utilized in my internship at Lyft, and finding time outside of work to continue updating this website with relavent content.
         </Typography>
         <div css={{ marginBottom: 32 }} />
         <Typography css={styles.content} variant="body1">

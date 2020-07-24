@@ -20,9 +20,10 @@ const compiler = webpack(config);
 
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
+    logLevel: 'warn', publicPath: config.output.publicPath
   })
 );
+
 app.use(webpackHotMiddleware(compiler));
 
 // Controllers
