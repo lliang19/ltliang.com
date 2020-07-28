@@ -124,7 +124,7 @@ const PlaceholderContent = (): JSX.Element => {
           {' '}
           <b>UC San Diego</b>
           {' '}
-          graduate with a degree in
+          graduate with a B.S. in
           {' '}
           <b>Computer Science</b>
           {' '}
@@ -133,9 +133,10 @@ const PlaceholderContent = (): JSX.Element => {
           <b>Interaction Design</b>
           .
           {' '}
-          I&apos;ve been exposed to various different aspects of Software Engineering, including
+          {/* eslint-disable-next-line max-len */}
+          So far, I&apos;ve been exposed to various different aspects of Software Engineering, including
           {' '}
-          <b>Front End Engineering and UI/UX Design and Engineering </b>
+          <b>Front End / Full Stack Webapp Engineering and UI/UX Design and Engineering </b>
           {' '}
           at
           {' '}
@@ -150,9 +151,9 @@ const PlaceholderContent = (): JSX.Element => {
           {' '}
           in the Summer of 2019, and now
           {' '}
-          <b>Back End Engineering</b>
+          <b>Back End / Full Stack Java Engineering</b>
           {' '}
-          at my current position as
+          at my current position as an
           {' '}
           <b>Associate Software Engineer</b>
           {' '}
@@ -170,7 +171,7 @@ const PlaceholderContent = (): JSX.Element => {
         </Typography>
         <div css={{ marginBottom: 16 }} />
         <Typography css={styles.content} variant="body1">
-          {/* eslint-disable-next-line */}
+          {/* eslint-disable-next-line max-len */}
           As you can probably tell, there&apos;s not much to this website (yet). I&apos;m currently in the process of remastering my website using some of the technologies that I learned and utilized in my internship at Lyft, and finding time outside of work to continue updating this website with relavent content.
         </Typography>
         <div css={{ marginBottom: 32 }} />
