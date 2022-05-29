@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 import { Flex, Heading, IconButton, Text, Tooltip } from '@chakra-ui/react';
 import { HiOutlineDocumentText } from 'react-icons/hi';
-import { useNavigate } from 'react-router-dom';
 
 import Logo from './Logo';
 
