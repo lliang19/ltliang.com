@@ -13,6 +13,7 @@ const App: FC = () => {
       flexDirection="column"
       height="100vh"
       justifyContent="center"
+      padding="48px 10vw"
       width="100vw"
     >
       <Heading as="h1" fontWeight={500} marginBottom="16px">
